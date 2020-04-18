@@ -1,14 +1,15 @@
 import React from 'react';
-import Card from './card/Card';
 import './App.css';
 import Suits from './card/Suits';
-import CardNumbers from './card/CardNumbers';
+import Table from './table/Table';
 
 function App() {
   return (
-    <div className="App">
-      <Card suit={Suits.HEARTS} number={CardNumbers.FIVE} />
-    </div>
+    <Table cards={[
+      { suit: Suits.JOKER },
+      { suit: Suits.JOKER },
+      { suit: Suits.JOKER }
+    ]} />
   );
 }
 

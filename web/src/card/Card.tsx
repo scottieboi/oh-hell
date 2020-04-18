@@ -56,138 +56,197 @@ import jackOfClubs from '../img/cards/jack_of_clubs.svg';
 import queenOfClubs from '../img/cards/queen_of_clubs.svg';
 import kingOfClubs from '../img/cards/king_of_clubs.svg';
 
-interface CardProps {
+export interface CardProps {
   suit: Suits,
   number?: CardNumbers
 }
 
-function Card(props: CardProps) {
+export const CARD_HEIGHT = 200;
+export const CARD_WIDTH = 0.688705 * CARD_HEIGHT;
+
+export function getCardAsImage(props: CardProps) {
+  const img = new Image();
+
   if (props.suit === Suits.JOKER) {
-    return (<img src={joker} className='Card' alt="" />);
-  }
-
-  if (props.suit === Suits.SPADES) {
+    img.src = joker;
+  } else if (props.suit === Suits.SPADES) {
     switch (props.number) {
       case CardNumbers.ACE:
-        return (<img src={aceOfSpades} className='Card' alt="" />);
+        img.src = aceOfSpades;
+        break;
       case CardNumbers.TWO:
-        return (<img src={twoOfSpades} className='Card' alt="" />);
+        img.src = twoOfSpades;
+        break;
       case CardNumbers.THREE:
-        return (<img src={threeOfSpades} className='Card' alt="" />);
+        img.src = threeOfSpades;
+        break;
       case CardNumbers.FOUR:
-        return (<img src={fourOfSpades} className='Card' alt="" />);
+        img.src = fourOfSpades;
+        break;
       case CardNumbers.FIVE:
-        return (<img src={fiveOfSpades} className='Card' alt="" />);
+        img.src = fiveOfSpades;
+        break;
       case CardNumbers.SIX:
-        return (<img src={sixOfSpades} className='Card' alt="" />);
+        img.src = sixOfSpades;
+        break;
       case CardNumbers.SEVEN:
-        return (<img src={sevenOfSpades} className='Card' alt="" />);
+        img.src = sevenOfSpades;
+        break;
       case CardNumbers.EIGHT:
-        return (<img src={eightOfSpades} className='Card' alt="" />);
+        img.src = eightOfSpades;
+        break;
       case CardNumbers.NINE:
-        return (<img src={nineOfSpades} className='Card' alt="" />);
+        img.src = nineOfSpades;
+        break;
       case CardNumbers.TEN:
-        return (<img src={tenOfSpades} className='Card' alt="" />);
+        img.src = tenOfSpades;
+        break;
       case CardNumbers.JACK:
-        return (<img src={jackOfSpades} className='Card' alt="" />);
+        img.src = jackOfSpades;
+        break;
       case CardNumbers.QUEEN:
-        return (<img src={queenOfSpades} className='Card' alt="" />);
+        img.src = queenOfSpades;
+        break;
       case CardNumbers.KING:
-        return (<img src={kingOfSpades} className='Card' alt="" />);
+        img.src = kingOfSpades;
+        break;
+    }
+  } else if (props.suit === Suits.DIAMONDS) {
+    switch (props.number) {
+      case CardNumbers.ACE:
+        img.src = aceOfDiamonds;
+        break;
+      case CardNumbers.TWO:
+        img.src = twoOfDiamonds;
+        break;
+      case CardNumbers.THREE:
+        img.src = threeOfDiamonds;
+        break;
+      case CardNumbers.FOUR:
+        img.src = fourOfDiamonds;
+        break;
+      case CardNumbers.FIVE:
+        img.src = fiveOfDiamonds;
+        break;
+      case CardNumbers.SIX:
+        img.src = sixOfDiamonds;
+        break;
+      case CardNumbers.SEVEN:
+        img.src = sevenOfDiamonds;
+        break;
+      case CardNumbers.EIGHT:
+        img.src = eightOfDiamonds;
+        break;
+      case CardNumbers.NINE:
+        img.src = nineOfDiamonds;
+        break;
+      case CardNumbers.TEN:
+        img.src = tenOfDiamonds;
+        break;
+      case CardNumbers.JACK:
+        img.src = jackOfDiamonds;
+        break;
+      case CardNumbers.QUEEN:
+        img.src = queenOfDiamonds;
+        break;
+      case CardNumbers.KING:
+        img.src = kingOfDiamonds;
+        break;
+    }
+  } else if (props.suit === Suits.HEARTS) {
+    switch (props.number) {
+      case CardNumbers.ACE:
+        img.src = aceOfHearts;
+        break;
+      case CardNumbers.TWO:
+        img.src = twoOfHearts;
+        break;
+      case CardNumbers.THREE:
+        img.src = threeOfHearts;
+        break;
+      case CardNumbers.FOUR:
+        img.src = fourOfHearts;
+        break;
+      case CardNumbers.FIVE:
+        img.src = fiveOfHearts;
+        break;
+      case CardNumbers.SIX:
+        img.src = sixOfHearts;
+        break;
+      case CardNumbers.SEVEN:
+        img.src = sevenOfHearts;
+        break;
+      case CardNumbers.EIGHT:
+        img.src = eightOfHearts;
+        break;
+      case CardNumbers.NINE:
+        img.src = nineOfHearts;
+        break;
+      case CardNumbers.TEN:
+        img.src = tenOfHearts;
+        break;
+      case CardNumbers.JACK:
+        img.src = jackOfHearts;
+        break;
+      case CardNumbers.QUEEN:
+        img.src = queenOfHearts;
+        break;
+      case CardNumbers.KING:
+        img.src = kingOfHearts;
+        break;
+    }
+  } else if (props.suit === Suits.CLUBS) {
+    switch (props.number) {
+      case CardNumbers.ACE:
+        img.src = aceOfClubs;
+        break;
+      case CardNumbers.TWO:
+        img.src = twoOfClubs;
+        break;
+      case CardNumbers.THREE:
+        img.src = threeOfClubs;
+        break;
+      case CardNumbers.FOUR:
+        img.src = fourOfClubs;
+        break;
+      case CardNumbers.FIVE:
+        img.src = fiveOfClubs;
+        break;
+      case CardNumbers.SIX:
+        img.src = sixOfClubs;
+        break;
+      case CardNumbers.SEVEN:
+        img.src = sevenOfClubs;
+        break;
+      case CardNumbers.EIGHT:
+        img.src = eightOfClubs;
+        break;
+      case CardNumbers.NINE:
+        img.src = nineOfClubs;
+        break;
+      case CardNumbers.TEN:
+        img.src = tenOfClubs;
+        break;
+      case CardNumbers.JACK:
+        img.src = jackOfClubs;
+        break;
+      case CardNumbers.QUEEN:
+        img.src = queenOfClubs;
+        break;
+      case CardNumbers.KING:
+        img.src = kingOfClubs;
+        break;
     }
   }
 
-  if (props.suit === Suits.DIAMONDS) {
-    switch (props.number) {
-      case CardNumbers.ACE:
-        return (<img src={aceOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.TWO:
-        return (<img src={twoOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.THREE:
-        return (<img src={threeOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.FOUR:
-        return (<img src={fourOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.FIVE:
-        return (<img src={fiveOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.SIX:
-        return (<img src={sixOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.SEVEN:
-        return (<img src={sevenOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.EIGHT:
-        return (<img src={eightOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.NINE:
-        return (<img src={nineOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.TEN:
-        return (<img src={tenOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.JACK:
-        return (<img src={jackOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.QUEEN:
-        return (<img src={queenOfDiamonds} className='Card' alt="" />);
-      case CardNumbers.KING:
-        return (<img src={kingOfDiamonds} className='Card' alt="" />);
-    }
-  }
+  return img;
+}
 
-  if (props.suit === Suits.HEARTS) {
-    switch (props.number) {
-      case CardNumbers.ACE:
-        return (<img src={aceOfHearts} className='Card' alt="" />);
-      case CardNumbers.TWO:
-        return (<img src={twoOfHearts} className='Card' alt="" />);
-      case CardNumbers.THREE:
-        return (<img src={threeOfHearts} className='Card' alt="" />);
-      case CardNumbers.FOUR:
-        return (<img src={fourOfHearts} className='Card' alt="" />);
-      case CardNumbers.FIVE:
-        return (<img src={fiveOfHearts} className='Card' alt="" />);
-      case CardNumbers.SIX:
-        return (<img src={sixOfHearts} className='Card' alt="" />);
-      case CardNumbers.SEVEN:
-        return (<img src={sevenOfHearts} className='Card' alt="" />);
-      case CardNumbers.EIGHT:
-        return (<img src={eightOfHearts} className='Card' alt="" />);
-      case CardNumbers.NINE:
-        return (<img src={nineOfHearts} className='Card' alt="" />);
-      case CardNumbers.TEN:
-        return (<img src={tenOfHearts} className='Card' alt="" />);
-      case CardNumbers.JACK:
-        return (<img src={jackOfHearts} className='Card' alt="" />);
-      case CardNumbers.QUEEN:
-        return (<img src={queenOfHearts} className='Card' alt="" />);
-      case CardNumbers.KING:
-        return (<img src={kingOfHearts} className='Card' alt="" />);
-    }
-  }
+function Card(props: CardProps) {
+  const img = getCardAsImage(props);
 
-  if (props.suit === Suits.CLUBS) {
-    switch (props.number) {
-      case CardNumbers.ACE:
-        return (<img src={aceOfClubs} className='Card' alt="" />);
-      case CardNumbers.TWO:
-        return (<img src={twoOfClubs} className='Card' alt="" />);
-      case CardNumbers.THREE:
-        return (<img src={threeOfClubs} className='Card' alt="" />);
-      case CardNumbers.FOUR:
-        return (<img src={fourOfClubs} className='Card' alt="" />);
-      case CardNumbers.FIVE:
-        return (<img src={fiveOfClubs} className='Card' alt="" />);
-      case CardNumbers.SIX:
-        return (<img src={sixOfClubs} className='Card' alt="" />);
-      case CardNumbers.SEVEN:
-        return (<img src={sevenOfClubs} className='Card' alt="" />);
-      case CardNumbers.EIGHT:
-        return (<img src={eightOfClubs} className='Card' alt="" />);
-      case CardNumbers.NINE:
-        return (<img src={nineOfClubs} className='Card' alt="" />);
-      case CardNumbers.TEN:
-        return (<img src={tenOfClubs} className='Card' alt="" />);
-      case CardNumbers.JACK:
-        return (<img src={jackOfClubs} className='Card' alt="" />);
-      case CardNumbers.QUEEN:
-        return (<img src={queenOfClubs} className='Card' alt="" />);
-      case CardNumbers.KING:
-        return (<img src={kingOfClubs} className='Card' alt="" />);
-    }
+  if (img) {
+    return (<img src={img.src} alt="Playing card" />);
   }
 
   return null;
