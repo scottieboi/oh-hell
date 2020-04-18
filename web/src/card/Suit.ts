@@ -1,4 +1,4 @@
-enum Suits {
+enum Suit {
   JOKER = 'JOKER',
   DIAMONDS = 'DIAMONDS',
   HEARTS = 'HEARTS',
@@ -6,4 +6,4 @@ enum Suits {
   CLUBS = 'CLUBS'
 }
 
-export default Suits;
+export default Suit;

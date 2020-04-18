@@ -54,7 +54,7 @@ function Table(props: TableProps) {
 
   React.useEffect(() => {
     drawCardsToCanvas(props.cards, canvasRef);
-  }, [props, window.innerWidth]);
+  }, [props]);
 
   return (<canvas
     ref={canvasRef}

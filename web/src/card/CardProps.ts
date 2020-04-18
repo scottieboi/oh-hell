@@ -1,7 +1,7 @@
-import Suits from "./Suits";
-import CardNumbers from "./CardNumbers";
+import Suit from './Suit';
+import CardNumber from './CardNumber';
 
 export default interface CardProps {
-  suit: Suits,
-  number?: CardNumbers
+  suit: Suit,
+  number?: CardNumber
 }

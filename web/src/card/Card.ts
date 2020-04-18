@@ -1,5 +1,5 @@
-import Suits from './Suits';
-import CardNumbers from './CardNumbers';
+import Suit from './Suit';
+import CardNumber from './CardNumber';
 
 import joker from '../img/cards/joker.svg';
 import aceOfSpades from '../img/cards/ace_of_spades.svg';
@@ -93,173 +93,173 @@ export function getCardHeight() {
 export function getCardAsImage(props: CardProps) {
   const img = new Image();
 
-  if (props.suit === Suits.JOKER) {
+  if (props.suit === Suit.JOKER) {
     img.src = joker;
-  } else if (props.suit === Suits.SPADES) {
+  } else if (props.suit === Suit.SPADES) {
     switch (props.number) {
-      case CardNumbers.ACE:
+      case CardNumber.ACE:
         img.src = aceOfSpades;
         break;
-      case CardNumbers.TWO:
+      case CardNumber.TWO:
         img.src = twoOfSpades;
         break;
-      case CardNumbers.THREE:
+      case CardNumber.THREE:
         img.src = threeOfSpades;
         break;
-      case CardNumbers.FOUR:
+      case CardNumber.FOUR:
         img.src = fourOfSpades;
         break;
-      case CardNumbers.FIVE:
+      case CardNumber.FIVE:
         img.src = fiveOfSpades;
         break;
-      case CardNumbers.SIX:
+      case CardNumber.SIX:
         img.src = sixOfSpades;
         break;
-      case CardNumbers.SEVEN:
+      case CardNumber.SEVEN:
         img.src = sevenOfSpades;
         break;
-      case CardNumbers.EIGHT:
+      case CardNumber.EIGHT:
         img.src = eightOfSpades;
         break;
-      case CardNumbers.NINE:
+      case CardNumber.NINE:
         img.src = nineOfSpades;
         break;
-      case CardNumbers.TEN:
+      case CardNumber.TEN:
         img.src = tenOfSpades;
         break;
-      case CardNumbers.JACK:
+      case CardNumber.JACK:
         img.src = jackOfSpades;
         break;
-      case CardNumbers.QUEEN:
+      case CardNumber.QUEEN:
         img.src = queenOfSpades;
         break;
-      case CardNumbers.KING:
+      case CardNumber.KING:
         img.src = kingOfSpades;
         break;
     }
-  } else if (props.suit === Suits.DIAMONDS) {
+  } else if (props.suit === Suit.DIAMONDS) {
     switch (props.number) {
-      case CardNumbers.ACE:
+      case CardNumber.ACE:
         img.src = aceOfDiamonds;
         break;
-      case CardNumbers.TWO:
+      case CardNumber.TWO:
         img.src = twoOfDiamonds;
         break;
-      case CardNumbers.THREE:
+      case CardNumber.THREE:
         img.src = threeOfDiamonds;
         break;
-      case CardNumbers.FOUR:
+      case CardNumber.FOUR:
         img.src = fourOfDiamonds;
         break;
-      case CardNumbers.FIVE:
+      case CardNumber.FIVE:
         img.src = fiveOfDiamonds;
         break;
-      case CardNumbers.SIX:
+      case CardNumber.SIX:
         img.src = sixOfDiamonds;
         break;
-      case CardNumbers.SEVEN:
+      case CardNumber.SEVEN:
         img.src = sevenOfDiamonds;
         break;
-      case CardNumbers.EIGHT:
+      case CardNumber.EIGHT:
         img.src = eightOfDiamonds;
         break;
-      case CardNumbers.NINE:
+      case CardNumber.NINE:
         img.src = nineOfDiamonds;
         break;
-      case CardNumbers.TEN:
+      case CardNumber.TEN:
         img.src = tenOfDiamonds;
         break;
-      case CardNumbers.JACK:
+      case CardNumber.JACK:
         img.src = jackOfDiamonds;
         break;
-      case CardNumbers.QUEEN:
+      case CardNumber.QUEEN:
         img.src = queenOfDiamonds;
         break;
-      case CardNumbers.KING:
+      case CardNumber.KING:
         img.src = kingOfDiamonds;
         break;
     }
-  } else if (props.suit === Suits.HEARTS) {
+  } else if (props.suit === Suit.HEARTS) {
     switch (props.number) {
-      case CardNumbers.ACE:
+      case CardNumber.ACE:
         img.src = aceOfHearts;
         break;
-      case CardNumbers.TWO:
+      case CardNumber.TWO:
         img.src = twoOfHearts;
         break;
-      case CardNumbers.THREE:
+      case CardNumber.THREE:
         img.src = threeOfHearts;
         break;
-      case CardNumbers.FOUR:
+      case CardNumber.FOUR:
         img.src = fourOfHearts;
         break;
-      case CardNumbers.FIVE:
+      case CardNumber.FIVE:
         img.src = fiveOfHearts;
         break;
-      case CardNumbers.SIX:
+      case CardNumber.SIX:
         img.src = sixOfHearts;
         break;
-      case CardNumbers.SEVEN:
+      case CardNumber.SEVEN:
         img.src = sevenOfHearts;
         break;
-      case CardNumbers.EIGHT:
+      case CardNumber.EIGHT:
         img.src = eightOfHearts;
         break;
-      case CardNumbers.NINE:
+      case CardNumber.NINE:
         img.src = nineOfHearts;
         break;
-      case CardNumbers.TEN:
+      case CardNumber.TEN:
         img.src = tenOfHearts;
         break;
-      case CardNumbers.JACK:
+      case CardNumber.JACK:
         img.src = jackOfHearts;
         break;
-      case CardNumbers.QUEEN:
+      case CardNumber.QUEEN:
         img.src = queenOfHearts;
         break;
-      case CardNumbers.KING:
+      case CardNumber.KING:
         img.src = kingOfHearts;
         break;
     }
-  } else if (props.suit === Suits.CLUBS) {
+  } else if (props.suit === Suit.CLUBS) {
     switch (props.number) {
-      case CardNumbers.ACE:
+      case CardNumber.ACE:
         img.src = aceOfClubs;
         break;
-      case CardNumbers.TWO:
+      case CardNumber.TWO:
         img.src = twoOfClubs;
         break;
-      case CardNumbers.THREE:
+      case CardNumber.THREE:
         img.src = threeOfClubs;
         break;
-      case CardNumbers.FOUR:
+      case CardNumber.FOUR:
         img.src = fourOfClubs;
         break;
-      case CardNumbers.FIVE:
+      case CardNumber.FIVE:
         img.src = fiveOfClubs;
         break;
-      case CardNumbers.SIX:
+      case CardNumber.SIX:
         img.src = sixOfClubs;
         break;
-      case CardNumbers.SEVEN:
+      case CardNumber.SEVEN:
         img.src = sevenOfClubs;
         break;
-      case CardNumbers.EIGHT:
+      case CardNumber.EIGHT:
         img.src = eightOfClubs;
         break;
-      case CardNumbers.NINE:
+      case CardNumber.NINE:
         img.src = nineOfClubs;
         break;
-      case CardNumbers.TEN:
+      case CardNumber.TEN:
         img.src = tenOfClubs;
         break;
-      case CardNumbers.JACK:
+      case CardNumber.JACK:
         img.src = jackOfClubs;
         break;
-      case CardNumbers.QUEEN:
+      case CardNumber.QUEEN:
         img.src = queenOfClubs;
         break;
-      case CardNumbers.KING:
+      case CardNumber.KING:
         img.src = kingOfClubs;
         break;
     }

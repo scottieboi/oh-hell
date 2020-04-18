@@ -1,4 +1,4 @@
-enum CardNumbers {
+enum CardNumber {
   JOKER = 0,
   ACE = 1,
   TWO = 2,
@@ -15,4 +15,4 @@ enum CardNumbers {
   KING = 13,
 }
 
-export default CardNumbers;
+export default CardNumber;
