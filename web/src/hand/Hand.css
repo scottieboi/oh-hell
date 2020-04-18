@@ -1,0 +1,14 @@
+.hand-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hand-container img {
+  padding: 5px;
+}
+
+.hand-header {
+  font-size: 1.5em;
+  text-align: center;
+}

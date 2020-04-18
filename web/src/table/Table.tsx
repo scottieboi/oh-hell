@@ -14,6 +14,8 @@ function drawCardsToCanvas(cards: Array<CardProps>, canvasRef: React.RefObject<H
 
       if (ctx) {
         // save the current ctx (unrotated or translated)
+        ctx.fillStyle = 'rgb(7,99,36)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.save();
 
         // put in centre
@@ -48,12 +50,12 @@ function Table(props: TableProps) {
 
   React.useEffect(() => {
     drawCardsToCanvas(props.cards, canvasRef);
-  });
+  }, [props]);
 
   return (<canvas
     ref={canvasRef}
     width={window.innerWidth}
-    height={CARD_HEIGHT * 2}
+    height={CARD_HEIGHT * 1.5}
   />);
 }
 

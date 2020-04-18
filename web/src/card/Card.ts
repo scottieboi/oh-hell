@@ -1,4 +1,3 @@
-import React from 'react';
 import Suits from './Suits';
 import CardNumbers from './CardNumbers';
 
@@ -61,7 +60,14 @@ export interface CardProps {
   number?: CardNumbers
 }
 
+/**
+ * Default height of card
+ */
 export const CARD_HEIGHT = 200;
+
+/**
+ * Default width of card
+ */
 export const CARD_WIDTH = 0.688705 * CARD_HEIGHT;
 
 export function getCardAsImage(props: CardProps) {
@@ -241,15 +247,3 @@ export function getCardAsImage(props: CardProps) {
 
   return img;
 }
-
-function Card(props: CardProps) {
-  const img = getCardAsImage(props);
-
-  if (img) {
-    return (<img src={img.src} alt="Playing card" />);
-  }
-
-  return null;
-}
-
-export default Card;
