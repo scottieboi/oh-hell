@@ -1,6 +1,7 @@
 import React from 'react';
-import { CardProps, CARD_HEIGHT, CARD_WIDTH, getCardAsImage } from '../card/Card';
+import { getCardAsImage, getCardWidth, getCardHeight } from '../card/Card';
 import { getRandomInt } from '../utils/Math';
+import CardProps from '../card/CardProps';
 
 interface TableProps {
   cards: Array<CardProps>
@@ -21,8 +22,11 @@ function drawCardsToCanvas(cards: Array<CardProps>, canvasRef: React.RefObject<H
         // put in centre
         ctx.translate(canvas.width / 2, canvas.height / 2);
 
+        const cardWidth = getCardWidth();
+        const cardHeight = getCardHeight();
+
         images.forEach(image => {
-          ctx.drawImage(image, -(CARD_WIDTH / 2), -(CARD_HEIGHT / 2), CARD_WIDTH, CARD_HEIGHT);
+          ctx.drawImage(image, -(cardWidth / 2), -(cardHeight / 2), cardWidth, cardHeight);
           ctx.rotate(getRandomInt(15, 30) * Math.PI / 180);
         });
         
@@ -50,12 +54,12 @@ function Table(props: TableProps) {
 
   React.useEffect(() => {
     drawCardsToCanvas(props.cards, canvasRef);
-  }, [props]);
+  }, [props, window.innerWidth]);
 
   return (<canvas
     ref={canvasRef}
     width={window.innerWidth}
-    height={CARD_HEIGHT * 1.5}
+    height={getCardHeight() * 1.5}
   />);
 }
 

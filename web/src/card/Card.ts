@@ -54,21 +54,41 @@ import tenOfClubs from '../img/cards/10_of_clubs.svg';
 import jackOfClubs from '../img/cards/jack_of_clubs.svg';
 import queenOfClubs from '../img/cards/queen_of_clubs.svg';
 import kingOfClubs from '../img/cards/king_of_clubs.svg';
-
-export interface CardProps {
-  suit: Suits,
-  number?: CardNumbers
-}
+import CardProps from './CardProps';
 
 /**
  * Default height of card
  */
-export const CARD_HEIGHT = 200;
+const CARD_HEIGHT = 200;
 
 /**
  * Default width of card
  */
-export const CARD_WIDTH = 0.688705 * CARD_HEIGHT;
+const CARD_WIDTH = 0.688705 * CARD_HEIGHT;
+
+export function getCardWidth() {
+  let width = CARD_WIDTH;
+
+  // Resize cards if on small screen
+  const smallScreenCardWidth = window.innerWidth / 4.5;
+  if (CARD_WIDTH > smallScreenCardWidth) {
+    width = smallScreenCardWidth;
+  }
+
+  return width;
+}
+
+export function getCardHeight() {
+  let height = CARD_HEIGHT;
+
+  // Resize cards if on small screen
+  const smallScreenCardWidth = window.innerWidth / 4.5;
+  if (CARD_WIDTH > smallScreenCardWidth) {
+    height = smallScreenCardWidth * CARD_HEIGHT / CARD_WIDTH;
+  }
+
+  return height;
+}
 
 export function getCardAsImage(props: CardProps) {
   const img = new Image();

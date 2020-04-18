@@ -1,31 +1,12 @@
 import React from 'react';
-import { CardProps, getCardAsImage, CARD_WIDTH, CARD_HEIGHT } from './Card';
+import { getCardAsImage, getCardWidth, getCardHeight } from './Card';
+import CardProps from './CardProps';
 
-interface SingleCardProps {
-  card: CardProps,
-  height?: number,
-  width?: number
-}
-
-function SingleCard(props: SingleCardProps) {
-  const img = getCardAsImage(props.card);
-
-  let width: number;
-  let height: number;
-
-  if (props.width) {
-    width = props.width;
-    height = props.width * CARD_HEIGHT / CARD_WIDTH;
-  } else if (props.height) {
-    width = props.height * CARD_WIDTH / CARD_HEIGHT;
-    height = props.height;
-  } else {
-    width = CARD_WIDTH;
-    height = CARD_HEIGHT;
-  }
+function SingleCard(props: CardProps) {
+  const img = getCardAsImage(props);
 
   if (img) {
-    return (<img src={img.src} width={width} height={height} alt="Playing card" />);
+    return (<img src={img.src} width={getCardWidth()} height={getCardHeight()} alt="Playing card" />);
   }
 
   return null;
